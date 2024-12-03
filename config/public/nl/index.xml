@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LOW←TECH MAGAZINE</title>
-    <link>http://localhost:1313/nl/</link>
+    <link>http://localhost:54128/nl/</link>
     <description>Recent content on LOW←TECH MAGAZINE</description>
     <generator>Hugo</generator>
     <language>nl</language>
-    <atom:link href="http://localhost:1313/nl/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54128/nl/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
