@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 .skill-item, .tool-item {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   text-align: center;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
