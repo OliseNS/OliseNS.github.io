@@ -36,16 +36,41 @@ body {
   color: #eceae5;
 }
 
-.navbar .nav-link,
-.navbar .navbar-brand {
-  color: var(--foreground); /* Ensures white text for the name and links */
+/* Glassmorphic Navbar */
+.glassmorphic-navbar {
+  backdrop-filter: blur(var(--glass-blur));
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
 }
 
-.navbar .nav-link:hover,
-.navbar .navbar-brand:hover {
-  color: var(--accent); /* Accent color on hover */
+.glassmorphic-navbar .navbar-brand {
+  font-weight: bold;
+  color: var(--foreground);
 }
 
+.glassmorphic-navbar .navbar-nav .nav-link {
+  color: var(--foreground);
+  transition: color 0.3s ease;
+}
+
+.glassmorphic-navbar .navbar-nav .nav-link:hover {
+  color: var(--accent);
+}
+
+.glassmorphic-navbar .custom-toggler {
+  background-color: var(--accent);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.glassmorphic-navbar .custom-toggler i {
+  color: #000;
+  font-size: 1.2rem;
+}
 /* Sections */
 section {
   padding: 80px 20px;
