@@ -74,18 +74,18 @@ h1, h2, h3, h4, h5, h6 {
 .skills i, .tools i {
   font-size: 2rem;
   margin: 10px;
-  color: #0d6efd;
+  color: var(--accent);
 }
 
 /* Buttons */
 button {
   position: relative;
-  font: inherit;
+  font-family: "Fira Code", Monaco, Consolas, "Ubuntu Mono", monospace;
   font-weight: bold;
   text-align: center;
   background: transparent;
-  color: var(--foreground); /* White text */
-  padding: 10px 20px;
+  color: var(--accent); /* White text */
+  padding: 5px 10px;
   border: none;
   border-left: 3px solid var(--accent); /* Border on the left */
   border-bottom: 3px solid var(--accent); /* Border at the bottom */
