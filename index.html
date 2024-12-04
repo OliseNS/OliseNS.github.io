@@ -10,10 +10,25 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <!-- Custom Styles -->
   <link href="style.css" rel="stylesheet">
+  <style>
+    .hello-box {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .project-image {
+      position: relative;
+    }
+  </style>
 </head>
 <body class="light-mode">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top bg-light">
     <div class="container">
       <a class="navbar-brand" href="#">Olisemeka Nmarkwe</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +46,7 @@
   </nav>
 
   <!-- About Section -->
-  <section id="about" class="text-center">
+  <section id="about" class="text-center py-5">
     <div class="container">
       <h1>About Me</h1>
       <img src="images/dither_it_1.JPG" alt="Olisemeka Nmarkwe" class="img-fluid">
@@ -40,7 +55,7 @@
   </section>
 
   <!-- Skills & Tools Section -->
-  <section id="skills-tools">
+  <section id="skills-tools" class="py-5">
     <div class="container">
       <h2 class="text-center">Skills & Tools</h2>
       <div class="skills">
@@ -52,7 +67,7 @@
           <i class="fab fa-python" title="Python"></i> Python
           <i class="fas fa-chart-line" title="SEO"></i> SEO
           <i class="fas fa-cogs" title="Oracle Apex"></i> Oracle Apex
-          <i class="fas fa-brain" title="Predictive Modeling"></i>  Predictive Modeling
+          <i class="fas fa-brain" title="Predictive Modeling"></i> Predictive Modeling
         </div>
       </div>
       <div class="tools mt-4">
@@ -66,26 +81,29 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects">
+  <section id="projects" class="projects py-5">
     <div class="container">
       <h2 class="text-center mb-4">Projects</h2>
       <div class="row">
         <div class="col-md-4">
-          <img src="images\dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" alt="EEG Clustering" class="img-fluid">
+          <div class="project-image">
+            <img src="images/dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" alt="EEG Clustering" class="img-fluid">
+            <div class="hello-box" id="hello-message">Hello</div>
+          </div>
           <h5 class="mt-2">EEG Clustering and Model Evaluation</h5>
           <p>Explore EEG feature clustering using KMeans and evaluate clustering metrics like cohesion and silhouette score.</p>
-          <button href="https://github.com/OliseNS/EEG-Clustering-Modeling" class="button"><i class="fab fa-github"></i> Github </button>
+          <a href="https://github.com/OliseNS/EEG-Clustering-Modeling" class="btn btn-dark"><i class="fab fa-github"></i> Github</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="text-center">
+  <section id="contact" class="text-center py-5">
     <div class="container">
       <h2>Contact</h2>
       <p>Feel free to reach out for collaborations or inquiries!</p>
-      <button href="mailto:example@example.com" class="button">Email Me</button>
+      <a href="mailto:example@example.com" class="btn btn-primary">Email Me</a>
     </div>
   </section>
 
@@ -98,5 +116,17 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Script for Changing Hello Message -->
+  <script>
+    const helloMessage = document.getElementById("hello-message");
+    const messages = ["Hello", "नमस्ते", "Bonjour", "Hola", "こんにちは"];
+    let index = 0;
+
+    setInterval(() => {
+      helloMessage.textContent = messages[index];
+      index = (index + 1) % messages.length;
+    }, 2000);
+  </script>
 </body>
 </html>
