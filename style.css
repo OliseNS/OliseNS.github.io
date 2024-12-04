@@ -213,3 +213,25 @@ input, textarea, select {
   padding: 10px;
   font: inherit;
 }
+
+.signature-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.signature {
+  width: 150px;
+  height: auto;
+  stroke: #ffffff;
+  fill: none; /* Make sure the path has no fill */
+  stroke-width: 2;
+  stroke-dasharray: 800; /* Total length of the path (use a large value) */
+  stroke-dashoffset: 800; /* Start fully offset */
+  animation: draw 6s ease-in-out forwards; /* 4s animation */
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; /* Path fully drawn */
+  }
+}
