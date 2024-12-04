@@ -50,8 +50,19 @@ section {
   padding: 80px 20px;
 }
 
+/* About Section */
+section#about {
+  text-align: left; /* Ensures all content in the about section aligns to the left */
+}
+
+section#about p {
+  margin: 0 auto;
+  text-align: left; /* Specifically aligns the paragraph text to the left */
+  line-height: var(--line-height); /* Ensures good readability */
+  font-size: calc(var(--font-size) * 1.1); /* Slightly larger font for better emphasis */
+}
+
 h1 {
-  text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: calc(var(--font-size) * 0.2);
 }
@@ -119,6 +130,7 @@ img {
   border: 8px solid var(--accent);
   border-radius: var(--radius);
   padding: 8px;
+  margin-bottom: 15px;
 }
 
 /* Tables */
