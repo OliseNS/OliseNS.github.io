@@ -1,0 +1,170 @@
+@import url('https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css');
+
+/* Root Variables */
+:root {
+  --background: #1a170f;
+  --foreground: #eceae5;
+  --accent: #eec35e;
+  --radius: 0;
+  --font-size: 1rem;
+  --line-height: 1.54em;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code", Monaco, Consolas, "Ubuntu Mono", monospace;
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: var(--line-height);
+  letter-spacing: -0.01em;
+  background-color: var(--background);
+  color: var(--foreground);
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga", "tnum", "ss01", "locl";
+  font-variant-ligatures: contextual;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Navbar */
+.navbar {
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: var(--foreground); /* Ensures white text for the name and links */
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: var(--accent); /* Accent color on hover */
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+}
+
+h1 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: calc(var(--font-size) * 0.2);
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: calc(var(--font-size) * 1.1);
+  letter-spacing: 0.04em;
+}
+
+/* Skills and Tools */
+.skills, .tools {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.skills i, .tools i {
+  font-size: 2rem;
+  margin: 10px;
+  color: #0d6efd;
+}
+
+/* Buttons */
+button {
+  position: relative;
+  font: inherit;
+  font-weight: bold;
+  text-align: center;
+  background: transparent;
+  color: var(--foreground); /* White text */
+  padding: 10px 20px;
+  border: none;
+  border-left: 3px solid var(--accent); /* Border on the left */
+  border-bottom: 3px solid var(--accent); /* Border at the bottom */
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background: var(--accent); /* Highlight on hover */
+  color: var(--background); /* Text turns dark */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+  color: #f8f9fa;
+}
+
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+  border: 8px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 8px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 2px solid var(--foreground);
+  padding: 10px;
+}
+
+th {
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+
+/* Blockquote */
+blockquote {
+  position: relative;
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding: 25px;
+}
+
+blockquote:before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* Placeholder */
+::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Form Inputs */
+input, textarea, select {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--foreground);
+  border-radius: var(--radius);
+  padding: 10px;
+  font: inherit;
+}

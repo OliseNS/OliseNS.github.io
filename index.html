@@ -8,69 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #121212;
-      color: #f8f9fa;
-    }
-
-    /* Navbar */
-    .navbar {
-      backdrop-filter: blur(10px);
-      background-color: rgba(0, 0, 0, 0.6);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .navbar .nav-link {
-      color: #f8f9fa;
-    }
-    .navbar .nav-link:hover {
-      color: #0d6efd;
-    }
-
-    /* Sections */
-    section {
-      padding: 80px 20px;
-    }
-    h1, h2, h3 {
-      color: #f8f9fa;
-    }
-
-    /* Skills and Tools */
-    .skills, .tools {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .skills i, .tools i {
-      font-size: 2rem;
-      margin: 10px;
-      color: #0d6efd;
-    }
-
-    /* Buttons */
-    .btn-primary {
-      background-color: #0d6efd;
-      border-color: #0d6efd;
-    }
-    .btn-primary:hover {
-      background-color: #0056b3;
-      border-color: #0056b3;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-    }
-    footer p {
-      color: #f8f9fa;
-    }
-
-  </style>
+  <!-- Custom Styles -->
+  <link href="style.css" rel="stylesheet">
 </head>
 <body class="light-mode">
   <!-- Navbar -->
@@ -82,18 +21,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#skills-tools">Skills & Tools</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills-tools">Skills & Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -103,8 +34,7 @@
   <section id="about" class="text-center">
     <div class="container">
       <h1>About Me</h1>
-      <img src="images\dither_it_1.JPG" alt="Mr" class="img-fluid">
-    </div>
+      <img src="images/dither_it_1.JPG" alt="Olisemeka Nmarkwe" class="img-fluid">
       <p>Hello! I'm Olisemeka Nmarkwe, a motivated computer science student with a passion for data analysis and machine learning. Proficient in Java, Python, SQL, and web development, I'm seeking a data science internship to apply my skills and gain valuable industry experience.</p>
     </div>
   </section>
@@ -115,57 +45,58 @@
       <h2 class="text-center">Skills & Tools</h2>
       <div class="skills">
         <h3>Skills</h3>
-        <i class="fab fa-java" title="Java"> Java</i>
-        <i class="fab fa-js" title="JavaScript"> JavaScript</i>
-        <i class="fas fa-database" title="SQL"> SQL</i>
-        <i class="fab fa-python" title="Python"> Python</i>
-        <i class="fas fa-chart-line" title="SEO"> SEO</i>
-        <i class="fas fa-cogs" title="Oracle Apex"> Oracle Apex</i>
-        <i class="fas fa-brain" title="Predictive Modeling"> Predictive Modeling</i>
-        <i class="fas fa-users" title="Collaboration"> Collaboration</i>
+        <div>
+          <i class="fab fa-java" title="Java"></i> Java
+          <i class="fab fa-js" title="JavaScript"></i> JavaScript
+          <i class="fas fa-database" title="SQL"></i> SQL
+          <i class="fab fa-python" title="Python"></i> Python
+          <i class="fas fa-chart-line" title="SEO"></i> SEO
+          <i class="fas fa-cogs" title="Oracle Apex"></i> Oracle Apex
+          <i class="fas fa-brain" title="Predictive Modeling"></i>  Predictive Modeling
+        </div>
       </div>
       <div class="tools mt-4">
         <h3>Tools</h3>
-        <i class="fas fa-table" title="Pandas"> Pandas</i>
-        <i class="fas fa-chart-bar" title="Seaborn"> Seaborn</i>
-        <i class="fas fa-chart-pie" title="Matplotlib"> Matplotlib</i>
-        <i class="fas fa-brain" title="Sklearn"> Sklearn</i>
-        <i class="fas fa-database" title="Kaggle"> Kaggle</i>
+        <i class="fas fa-table" title="Pandas"></i> Pandas
+        <i class="fas fa-chart-bar" title="Seaborn"></i> Seaborn
+        <i class="fas fa-chart-pie" title="Matplotlib"></i> Matplotlib
+        <i class="fas fa-brain" title="Sklearn"></i> Sklearn
       </div>
     </div>
   </section>
 
-<!-- Projects Section -->
-<section id="projects" class="projects">
-  <div class="container">
-    <h2 class="text-center mb-4">Projects</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <img src="images\dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" alt="EEG-features-clustering" class="img-fluid">
-        <h5 class="mt-2">EEG Clustering and Model Evaluation</h5>
-        <p>This repository contains a project focused on clustering EEG (electroencephalogram) features using KMeans, followed by performance evaluation and visualization. The goal is to assess different clustering metrics (e.g., cohesion, separation, silhouette score) and visualize the clustering results through various evaluation metrics.</p>
-        <a href="https://github.com/OliseNS/EEG-Clustering-Modeling" class="btn btn-primary">Check on <i class="fa-brands fa-square-github"></i></a>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="text-center mb-4">Projects</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="images\dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" alt="EEG Clustering" class="img-fluid">
+          <h5 class="mt-2">EEG Clustering and Model Evaluation</h5>
+          <p>Explore EEG feature clustering using KMeans and evaluate clustering metrics like cohesion and silhouette score.</p>
+          <a href="https://github.com/OliseNS/EEG-Clustering-Modeling" class="button"><i class="fab fa-github"> Github </i></a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="text-center">
     <div class="container">
       <h2>Contact</h2>
       <p>Feel free to reach out for collaborations or inquiries!</p>
-      <a href="mailto:example@example.com" class="btn btn-primary">Email Me</a>
+      <a href="mailto:example@example.com" class="button">Email Me</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Olisemeka Nmarkwe. All rights reserved.</p>
+  <footer class="bg-dark text-light py-3">
+    <div class="container text-center">
+      <p>&copy; 2024 Olisemeka Nmarkwe. All rights reserved.</p>
+    </div>
   </footer>
 
-  <!-- Bootstrap JS CDN -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
