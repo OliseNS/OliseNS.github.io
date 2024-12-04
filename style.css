@@ -33,6 +33,7 @@ body {
   backdrop-filter: blur(20px);
   background-color: rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #eceae5;
 }
 
 .navbar .nav-link,
@@ -86,30 +87,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
   margin: 10px;
   color: var(--accent);
-}
-
-/* Buttons */
-button {
-  position: relative;
-  font-family: "Fira Code", Monaco, Consolas, "Ubuntu Mono", monospace;
-  font-weight: bold;
-  text-align: center;
-  background: transparent;
-  color: var(--accent); /* White text */
-  padding: 5px 10px;
-  border: none;
-  border-left: 3px solid var(--accent); /* Border on the left */
-  border-bottom: 3px solid var(--accent); /* Border at the bottom */
-  border-radius: var(--radius);
-  transition: all 0.2s ease;
-  appearance: none;
-  cursor: pointer;
-  outline: none;
-}
-
-button:hover {
-  background: var(--accent); /* Highlight on hover */
-  color: var(--background); /* Text turns dark */
 }
 
 /* Footer */

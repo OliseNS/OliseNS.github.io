@@ -21,14 +21,15 @@
       border-radius: 5px;
       font-size: 14px;
     }
-    .project-image {
+    .about-image {
       position: relative;
+      display: inline-block;
     }
   </style>
 </head>
 <body class="light-mode">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-light">
+  <nav class="navbar sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">Olisemeka Nmarkwe</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,8 +50,11 @@
   <section id="about" class="text-center py-5">
     <div class="container">
       <h1>About Me</h1>
-      <img src="images/dither_it_1.JPG" alt="Olisemeka Nmarkwe" class="img-fluid">
-      <p>Hello! I'm Olisemeka Nmarkwe, a motivated computer science student with a passion for data analysis and machine learning. Proficient in Java, Python, SQL, and web development, I'm seeking a data science internship to apply my skills and gain valuable industry experience.</p>
+      <div class="about-image">
+        <img src="images/dither_it_1.JPG" alt="Olisemeka Nmarkwe" class="img-fluid">
+        <div class="hello-box" id="hello-message">Hello</div>
+      </div>
+      <p>I'm Olisemeka Nmarkwe, a motivated computer science student with a passion for data analysis and machine learning. Proficient in Java, Python, SQL, and web development, I'm seeking a data science internship to apply my skills and gain valuable industry experience.</p>
     </div>
   </section>
 
@@ -86,10 +90,7 @@
       <h2 class="text-center mb-4">Projects</h2>
       <div class="row">
         <div class="col-md-4">
-          <div class="project-image">
-            <img src="images/dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" alt="EEG Clustering" class="img-fluid">
-            <div class="hello-box" id="hello-message">Hello</div>
-          </div>
+          <img src="images/dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" alt="EEG Clustering" class="img-fluid">
           <h5 class="mt-2">EEG Clustering and Model Evaluation</h5>
           <p>Explore EEG feature clustering using KMeans and evaluate clustering metrics like cohesion and silhouette score.</p>
           <a href="https://github.com/OliseNS/EEG-Clustering-Modeling" class="btn btn-dark"><i class="fab fa-github"></i> Github</a>
@@ -103,7 +104,7 @@
     <div class="container">
       <h2>Contact</h2>
       <p>Feel free to reach out for collaborations or inquiries!</p>
-      <a href="mailto:example@example.com" class="btn btn-primary">Email Me</a>
+      <a href="mailto:example@example.com" class="btn btn-dark">Email Me</a>
     </div>
   </section>
 
