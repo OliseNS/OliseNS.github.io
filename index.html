@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #121212;
+      color: #f2eecb;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      image-rendering: pixelated;
+    }
+    h1, h2, p {
+      margin: 10px 0;
+    }
+
+    /* Retro Button */
+    .retro-btn {
+      font-size: 14px;
+      color: #fff;
+      background-color: #4361ee;
+      border: 3px solid #f72585;
+      padding: 10px 20px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px #f72585;
+      text-transform: uppercase;
+    }
+    .retro-btn:hover {
+      background-color: #f72585;
+      border-color: #4361ee;
+      box-shadow: 0px 0px 15px #4361ee;
+    }
+
+    /* Retro Card */
+    .retro-card {
+      border: 4px solid #4361ee;
+      box-shadow: 0px 0px 12px #4361ee;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 500px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Dither Effect */
+    .dithered {
+      filter: contrast(200%) brightness(80%);
+    }
+
+    /* Flicker Animation */
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+    h1 {
+      animation: flicker 0.3s infinite;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body class="dithered">
+  <!-- Header -->
+  <h1>My Retro Portfolio</h1>
+
+  <!-- About Me Section -->
+  <div class="retro-card">
+    <h2>About Me</h2>
+    <p>Welcome to my retro-inspired site! I'm a designer with a love for 80s aesthetics and digital art.</p>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="retro-card">
+    <h2>Projects</h2>
+    <p>Check out my projects below:</p>
+    <ul>
+      <li><a href="#" style="color: #4cc9f0;">Project 1</a></li>
+      <li><a href="#" style="color: #4cc9f0;">Project 2</a></li>
+      <li><a href="#" style="color: #4cc9f0;">Project 3</a></li>
+    </ul>
+  </div>
+
+  <!-- Dither Toggle Button -->
+  <button class="retro-btn" id="toggle-dither">Undither</button>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 My Retro Portfolio. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Toggle Dither Effect
+    const body = document.body;
+    const toggleBtn = document.getElementById('toggle-dither');
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dithered');
+      toggleBtn.textContent = body.classList.contains('dithered') ? 'Undither' : 'Dither';
+    });
+  </script>
+</body>
+</html>
