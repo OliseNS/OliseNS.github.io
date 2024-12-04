@@ -30,7 +30,7 @@ body {
 
 /* Navbar */
 .navbar {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(1px);
   background-color: rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   color: #eceae5;
@@ -38,7 +38,7 @@ body {
 
 /* Glassmorphic Navbar */
 .glassmorphic-navbar {
-  backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(5px);
   background-color: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 10px;
@@ -220,11 +220,11 @@ input, textarea, select {
 }
 
 .signature {
-  width: 150px;
+  width: 130px;
   height: auto;
   stroke: #ffffff;
   fill: none; /* Make sure the path has no fill */
-  stroke-width: 2;
+  stroke-width: 1.3;
   stroke-dasharray: 800; /* Total length of the path (use a large value) */
   stroke-dashoffset: 800; /* Start fully offset */
   animation: draw 6s ease-in-out forwards; /* 4s animation */
