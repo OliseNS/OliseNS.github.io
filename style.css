@@ -102,17 +102,48 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.04em;
 }
 
-/* Skills and Tools */
-.skills, .tools {
-  text-align: center;
-  margin-top: 20px;
+/* Skills & Tools Section */
+#skills-tools {
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
-.skills i, .tools i {
-  font-size: 2rem;
-  margin: 10px;
-  color: var(--accent);
+.skills-list, .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: left;
 }
+
+.skill-item, .tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 120px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-item:hover, .tool-item:hover {
+  transform: scale(1.1);
+  background-color: var(--accent);
+  color: #000;
+}
+
+.skill-item i, .tool-item i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.skill-item span, .tool-item span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 
 /* Footer */
 footer {
