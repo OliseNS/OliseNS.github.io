@@ -159,7 +159,7 @@ footer p {
 /* Images */
 img {
   display: block;
-  max-width: 100%;
+  max-width: 10px;
   border: 8px solid var(--accent);
   border-radius: var(--radius);
   padding: 8px;
@@ -233,5 +233,25 @@ input, textarea, select {
 @keyframes draw {
   to {
     stroke-dashoffset: 0; /* Path fully drawn */
+  }
+}
+
+.about-image {
+  width: 100%; /* Full width for small screens */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 600px; /* Limit the size for medium and large screens */
+  display: block; /* Center-align if needed */
+  margin: 0 auto; /* Center-align the image */
+}
+
+@media (min-width: 768px) {
+  .about-image {
+    max-width: 50%; /* Adjust the size for medium devices */
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-image {
+    max-width: 400px; /* Further reduce the size for larger screens */
   }
 }
