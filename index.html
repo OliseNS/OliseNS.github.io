@@ -218,9 +218,9 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- Insert your existing form here -->
-        <div class="custom-form">
-          <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSde9CJry3MXK286iR9AHMVD6uDOrrCKMlpCv5gWp1qh_hltPw/formResponse" method="POST" onsubmit="submitForm(event)">
+        <!-- Form Container -->
+        <div id="form-container">
+          <form id="contact-form" onsubmit="submitForm(event)">
             <label for="full-name">Full Name</label>
             <input 
               type="text" 
@@ -248,13 +248,78 @@
               required
             ></textarea>
       
-            <button type="submit">Submit</button>
+            <button type="submit" id="submit-button">Submit</button>
           </form>
+        </div>
+        <!-- Thank You Message -->
+        <div id="thank-you-message" style="display: none; text-align: center; color: white;">
+          <p>Thank you! I'll get back to you as soon as possible.</p>
+          <p id="cooldown-timer"></p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  let cooldown = false; // Cooldown flag
+
+  function submitForm(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    if (cooldown) {
+      alert("Please wait before sending another message.");
+      return;
+    }
+
+    // Collect form data
+    const form = document.getElementById('contact-form');
+    const formData = new FormData(form);
+
+    // Submit the form data to Google Forms
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSde9CJry3MXK286iR9AHMVD6uDOrrCKMlpCv5gWp1qh_hltPw/formResponse', {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors', // Allows submission without blocking due to CORS
+    })
+    .then(() => {
+      // Reset the form
+      form.reset();
+
+      // Show thank-you message and start cooldown
+      showThankYouMessage();
+    })
+    .catch(() => {
+      alert('There was an error submitting the form. Please try again later.');
+    });
+  }
+
+  function showThankYouMessage() {
+    const formContainer = document.getElementById('form-container');
+    const thankYouMessage = document.getElementById('thank-you-message');
+    const cooldownTimer = document.getElementById('cooldown-timer');
+    const cooldownDuration = 60; // Cooldown duration in seconds
+    let timeLeft = cooldownDuration;
+
+    // Hide form and show thank-you message
+    formContainer.style.display = "none";
+    thankYouMessage.style.display = "block";
+
+    // Start cooldown timer
+    cooldown = true;
+    const countdown = setInterval(() => {
+      cooldownTimer.textContent = `You can send another message in ${timeLeft}s.`;
+      timeLeft -= 1;
+      if (timeLeft < 0) {
+        clearInterval(countdown);
+        cooldown = false;
+        cooldownTimer.textContent = "";
+        thankYouMessage.style.display = "none";
+        formContainer.style.display = "block"; // Show the form again
+      }
+    }, 1000);
+  }
+</script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
