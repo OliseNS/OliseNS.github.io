@@ -30,9 +30,13 @@ body {
 
 /* Navbar */
 .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--background);
+  font-size: 1em;
+  padding: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: #eceae5;
 }
 
 
@@ -194,6 +198,18 @@ input, textarea, select {
   stroke-dasharray: 800; /* Total length of the path (use a large value) */
   stroke-dashoffset: 800; /* Start fully offset */
   animation: draw 8s ease-in-out forwards; /* 4s animation */
+}
+
+@keyframes flash {
+  50% { color: white; }
+  100% { color: #eec35e; }
+  
+}
+
+.flashing-text {
+  font-size: 2rem;
+  font-weight: bold;
+  animation: flash 1.5s infinite;
 }
 
 @keyframes draw {
