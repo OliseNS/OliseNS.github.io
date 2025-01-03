@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Olisemeka Nmarkwe</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <!-- Bootstrap CDN -->
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LceuawqAAAAAPAlZodH7byRLn9iqfWjf2eeTM5G"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
@@ -164,25 +166,98 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="text-center py-5">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Feel free to reach out for collaborations or inquiries!</p>
-      <a href="mailto:example@example.com" class="btn btn-dark">Email Me</a>
-    </div>
-  </section>
-  
-  <div class="form-wrapper">
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSde9CJry3MXK286iR9AHMVD6uDOrrCKMlpCv5gWp1qh_hltPw/viewform?embedded=true"
-      width="100%"
-      height="700"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-    >Loading…</iframe>
+ <!-- Contact Section -->
+<section id="contact" class="text-center py-5">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>Feel free to email me or fill out the form below for collaborations or inquiries!</p>
+    <a href="mailto:example@example.com" class="btn btn-dark">Email Me</a>
   </div>
+
+  <div class="custom-form">
+    <h2>Have a Question or Idea?</h2>
+    <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSde9CJry3MXK286iR9AHMVD6uDOrrCKMlpCv5gWp1qh_hltPw/formResponse" method="POST" onsubmit="submitForm(event)">
+      <label for="full-name">Full Name</label>
+      <input 
+        type="text" 
+        id="full-name" 
+        name="entry.298308065" 
+        placeholder="Enter your full name" 
+        required 
+      />
+
+      <label for="email">Email Address</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="entry.1392201790" 
+        placeholder="Enter your email address" 
+        required 
+      />
+
+      <label for="message">Message</label>
+      <textarea 
+        id="message" 
+        name="entry.100297225" 
+        rows="5" 
+        placeholder="Write your message here" 
+        required
+      ></textarea>
+
+      <!-- Google reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="6LceuawqAAAAAPAlZodH7byRLn9iqfWjf2eeTM5G"></div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Toast Notification (Bootstrap) -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
+      <div class="toast-header">
+        <strong class="me-auto">Thank You!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div id="toast-body" class="toast-body"></div>
+    </div>
+  </div>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault(); // Prevent page redirect
+
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        alert("Please complete the reCAPTCHA.");
+        return;
+      }
+
+      const formData = new FormData(document.getElementById('contact-form'));
+      formData.append('g-recaptcha-response', recaptchaResponse); // Add reCAPTCHA response to the form data
+
+      // Send the form data using fetch
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSde9CJry3MXK286iR9AHMVD6uDOrrCKMlpCv5gWp1qh_hltPw/formResponse', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('liveToast').style.display = 'block';
+          document.getElementById('toast-body').innerText = 'Your message has been sent successfully!';
+          document.getElementById('contact-form').reset();
+        } else {
+          document.getElementById('toast-body').innerText = 'Oops, something went wrong!';
+          document.getElementById('liveToast').style.display = 'block';
+        }
+      })
+      .catch(error => {
+        document.getElementById('toast-body').innerText = 'There was an error with your submission. Please try again later.';
+        document.getElementById('liveToast').style.display = 'block';
+      });
+    }
+  </script>
+</section>
+
   
 
   <!-- Footer -->
