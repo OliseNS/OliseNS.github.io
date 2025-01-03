@@ -244,6 +244,24 @@ input, textarea, select {
   margin: 0 auto; /* Center-align the image */
 }
 
+/* Wrapper for Google Form */
+.form-wrapper {
+  background-color: #1a170f; /* Matches your dark theme */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling the iframe */
+iframe {
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+
 @media (min-width: 768px) {
   .about-image {
     max-width: 50%; /* Adjust the size for medium devices */
