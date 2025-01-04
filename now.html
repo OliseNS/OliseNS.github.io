@@ -11,6 +11,24 @@
   <!-- Custom Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <style>
+    .hello-box {
+      position: absolute;
+      bottom:3rem;
+      left: 1.8rem;
+      background: #eec35e;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 2px;
+      font-size: 2rem;
+      height: 10px;
+    }
+    .about-image {
+      position: relative;
+      display: inline-block;
+        }
+        
+      </style>
     </head>
     <body>
       <!-- Navbar -->
@@ -32,12 +50,12 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="project.html" class="btn btn-dark mt-3 mx-2 active"> 
+            <a href="project.html" class="btn btn-dark mt-3 mx-2"> 
               Projects
             </a>
           </li>
           <li class="nav-item">
-            <a href="now.html" class="btn btn-dark mt-3 mx-2"> 
+            <a href="now.html" class="btn btn-dark mt-3 mx-2 active"> 
               Now
             </a>
           </li>
@@ -53,39 +71,26 @@
     </div>
   </nav>
 
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Projects</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <img src="assets/dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" alt="EEG Clustering" class="img-fluid">
-          <h5 class="mt-2">EEG Clustering and Model Evaluation</h5>
-          <p>Explore EEG feature clustering using KMeans and evaluate clustering metrics like cohesion and silhouette score.</p>
-          <a href="https://github.com/OliseNS/EEG-Clustering-Modeling" class="btn btn-dark"><i class="fab fa-github"></i> Github</a>
-        </div>
-        
-        <div class="col-md-4" style="margin-top: 2rem;">
-          <img src="assets\dither_it_epoch_vs_loss_P3.png" alt="EpochVsLoss" class="img-fluid">
-          <h5 class="mt-2">EEG Classification with ANN and Model Comparison</h5>
-          <p>Developed an ANN for EEG classification with optimized architecture and compared its performance against Decision Tree, KNN, and SVM models using key metrics and visualizations.</p>
-          <a href="https://github.com/OliseNS/EEG-Model-and-Comparison" class="btn btn-dark"><i class="fab fa-github"></i> Github</a>
-        </div>
-
-        <div class="col-md-4" style="margin-top: 2rem;">
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Coming Soon</h5>
-                    <p class="card-text">Stay tuned for more exciting projects!</p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="date">January 2025</div>
+        <div class="content">
+          <p>With plenty of spare time this winter break, I'm focusing on working on exciting projects to boost my skills and creativity. 
+            Aside from coding, I've been enjoying skating and working out regularly to stay active and healthy 💪🏿.
+          </p></p>
         </div>
       </div>
+
+      <div class="timeline-item">
+        <div class="date">Once Upon a time</div>
+        <div class="content">
+          <p>I stumbled upon <a href="https://eva.town/now" target="_blank">Eva.town</a>, a site that encouraged me to create creating a /now page to share brief updates on your current life, much like catching up with an old friend. It’s all about the big picture. Sounds appealing. I might just create one myself.</p>
+        </div>
+      </div>
+
     </div>
-  </section>
-
-
+  </div>
 
 <script src="https://tinylytics.app/embed/nzEHpyHjcyNeFdoSXqeW.js" defer></script>
 
@@ -95,7 +100,6 @@
       border-top: 2px solid #333;
     }
   </style>
-
 <footer class="footer py-5">
     <div class="container">
       <div class="row text-center">
@@ -183,8 +187,6 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
   let cooldown = false; // Cooldown flag
 
@@ -244,5 +246,9 @@
     }, 1000);
   }
 </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

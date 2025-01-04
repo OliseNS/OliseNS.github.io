@@ -307,6 +307,60 @@ input, textarea, select {
       resize: none;
     }
 
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+      margin-left: 50px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #ddd;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 30px;
+    }
+
+    .timeline-item .date {
+      top: 0;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: white;
+      text-decoration: wavy underline;
+      text-decoration-color: var(--accent);
+    }
+
+    .timeline-item .content {
+      padding-left: 20px;
+    }
+
+    .timeline-item .content p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
 @media (min-width: 768px) {
   .about-image {
     max-width: 50%; /* Adjust the size for medium devices */
