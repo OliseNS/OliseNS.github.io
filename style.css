@@ -210,7 +210,50 @@ input, textarea, select {
   font-size: 2rem;
   font-weight: bold;
   animation: flash 1.5s infinite;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
+
+/* Reset all margins and paddings */
+.nav, .nav-item, .btn {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set consistent button padding */
+.btn {
+  padding: 0.375rem 0.75rem;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+
+/* Add hover effect for dropdown items */
+.hover-effect:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Active state for nav buttons and dropdown items */
+.nav-btn:active,
+.nav-btn.active,
+.dropdown-item:active,
+.dropdown-item.active {
+  background-color: var(--accent) !important;
+}
+
+/* Fix button alignment */
+.nav-item .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 @keyframes draw {
   to {
@@ -339,7 +382,10 @@ input, textarea, select {
       text-decoration-style: wavy;
       text-decoration-color: var(--accent)
     }
-
+    .signature-container {
+      position: sticky;
+      top: 0;
+    }
     .timeline-item .content {
       padding-left: 20px;
     }
