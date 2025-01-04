@@ -11,24 +11,6 @@
   <!-- Custom Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-  <style>
-    .hello-box {
-      position: absolute;
-      bottom:3rem;
-      left: 1.8rem;
-      background: #eec35e;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 2px;
-      font-size: 2rem;
-      height: 10px;
-    }
-    .about-image {
-      position: relative;
-      display: inline-block;
-        }
-        
-      </style>
     </head>
     <body>
       <!-- Navbar -->
@@ -50,12 +32,12 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="project.html" class="btn btn-dark mt-3 mx-2"> 
+            <a href="project.html" class="btn btn-dark mt-3 mx-2 active"> 
               Projects
             </a>
           </li>
           <li class="nav-item">
-            <a href="now.html" class="btn btn-dark mt-3 mx-2"> 
+            <a href="" class="btn btn-dark mt-3 mx-2"> 
               Now
             </a>
           </li>
@@ -71,85 +53,37 @@
     </div>
   </nav>
 
-<section>
-<div class="container mt-0" id="me">
-  <div class="row align-items-center">
-   
-    <div class="about-image text-lg-start">
-      <img src="assets/dither_it_1.JPG" alt="Olisemeka Nmarkwe" class="img-fluid mb-3">
-      <div class="hello-box" id="hello-message">Hello</div>
-    </div>
 
-    <!-- Right Column: Introduction Text -->
-    <div class="col-lg-6">
-      <p class="introduction-text">
-        <strong><a href="">Olisemeka Nmarkwe</a></strong> is a motivated computer science student passionate about data analysis and machine learning. Proficient in Java, Python, SQL, and JavaScript, Olisemeka is seeking a data science internship to apply these skills and gain valuable industry experience.
-      </p>
-      <a href="assets/Olisemeka's CS 2025.pdf" class="btn btn-dark mt-3" download> 
-        <i class="fas fa-download"></i> Download Resume
-      </a>
-    </div>
-  </div>
-</div>
-</section>
+  <!-- Projects Section -->
+  <section id="projects" class="projects py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Projects</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="assets/dither_it_module_PA4_cluster_TrainValidateData_CPz.csv.png" alt="EEG Clustering" class="img-fluid">
+          <h5 class="mt-2">EEG Clustering and Model Evaluation</h5>
+          <p>Explore EEG feature clustering using KMeans and evaluate clustering metrics like cohesion and silhouette score.</p>
+          <a href="https://github.com/OliseNS/EEG-Clustering-Modeling" class="btn btn-dark"><i class="fab fa-github"></i> Github</a>
+        </div>
+        
+        <div class="col-md-4" style="margin-top: 2rem;">
+          <img src="assets\dither_it_epoch_vs_loss_P3.png" alt="EpochVsLoss" class="img-fluid">
+          <h5 class="mt-2">EEG Classification with ANN and Model Comparison</h5>
+          <p>Developed an ANN for EEG classification with optimized architecture and compared its performance against Decision Tree, KNN, and SVM models using key metrics and visualizations.</p>
+          <a href="https://github.com/OliseNS/EEG-Model-and-Comparison" class="btn btn-dark"><i class="fab fa-github"></i> Github</a>
+        </div>
 
-<div class="container py-5">
-  <h2 class="text-center mb-5">Skills & Tools</h2>
-  <div class="row">
-    <!-- Sidebar Navigation -->
-    <div class="col-12 col-md-4">
-      <div id="skills-tools-nav" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-        <a class="p-1 rounded" href="#programming-languages">Programming Languages</a>
-        <a class="p-1 rounded" href="#technical-skills">Technical Skills</a>
-        <a class="p-1 rounded" href="#tools">Tools</a>
-        <a class="p-1 rounded" href="#modeling-techniques">Modeling Techniques</a>
+        <div class="col-md-4" style="margin-top: 2rem;">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Coming Soon</h5>
+                    <p class="card-text">Stay tuned for more exciting projects!</p>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
-
-    <!-- Content -->
-    <div class="col-12 col-md-8">
-      <div data-bs-spy="scroll" data-bs-target="#skills-tools-nav" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-        <!-- Programming Languages -->
-        <h4 id="programming-languages">Programming Languages</h4>
-        <ul>
-          <li><i class="fab fa-js skill-icon"></i>JavaScript</li>
-          <li><i class="fab fa-react skill-icon"></i>React</li>
-          <li><i class="fab fa-python skill-icon"></i>Python</li>
-          <li><i class="fas fa-database skill-icon"></i>SQL</li>
-          <li><i class="fas fa-code skill-icon"></i>Django</li>
-        </ul>
-
-        <!-- Technical Skills -->
-        <h4 id="technical-skills">Technical Skills</h4>
-        <ul>
-          <li><i class="fas fa-brain skill-icon"></i>Predictive Modeling</li>
-          <li><i class="fas fa-chart-line skill-icon"></i>SEO</li>
-          <li><i class="fas fa-cogs skill-icon"></i>Oracle Apex</li>
-          <li><i class="fas fa-robot skill-icon"></i>Machine Learning</li>
-        </ul>
-
-        <!-- Tools -->
-        <h4 id="tools">Tools</h4>
-        <ul>
-          <li><i class="fas fa-table skill-icon"></i>Pandas</li>
-          <li><i class="fas fa-chart-bar skill-icon"></i>Seaborn</li>
-          <li><i class="fas fa-chart-pie skill-icon"></i>Matplotlib</li>
-          <li><i class="fas fa-brain skill-icon"></i>Scikit-learn</li>
-          <li><i class="fab fa-google skill-icon"></i>Google Colab</li>
-          <li><i class="fab fa-kaggle skill-icon"></i>Kaggle</li>
-        </ul>
-
-        <!-- Modeling Techniques -->
-        <h4 id="modeling-techniques">Modeling Techniques</h4>
-        <ul>
-          <li><i class="fas fa-network-wired skill-icon"></i>Artificial Neural Networks</li>
-          <li><i class="fas fa-sitemap skill-icon"></i>Support Vector Machines</li>
-          <li><i class="fas fa-tree skill-icon"></i>Decision Trees</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+  </section>
 
 
 
@@ -305,33 +239,5 @@
     }, 1000);
   }
 </script>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Custom Script for Changing Hello Message -->
-  <script>
-    const helloMessage = document.getElementById("hello-message");
-    const messages = [
-    "Hello",          // English
-    "नमस्ते",          // Nepali
-    "Ndewo",          // Igbo
-    "Ciao",           // Italian
-    "Bonjour",        // French
-    "Hola",           // Spanish
-    "こんにちは",       // Japanese
-    "Guten Tag",      // German
-    "Привет",         // Russian
-    "Olá",            // Portuguese
-    "Kamusta",        // Filipino
-];
-
-    let index = 0;
-
-    setInterval(() => {
-      helloMessage.textContent = messages[index];
-      index = (index + 1) % messages.length;
-    }, 1500);
-  </script>
 </body>
 </html>
