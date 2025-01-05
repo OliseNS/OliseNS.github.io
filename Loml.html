@@ -3,127 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love HJW - Holly, You Light Up My Life</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Happy 21st Birthday!</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #ff9ecd;
+            --text-color: #4a154b;
+            --background-color: #fff0f5;
+            --section-spacing: clamp(2rem, 5vw, 4rem);
+            --container-padding: clamp(1rem, 3vw, 2rem);
+        }
+
         body {
-            background-color: #000000;
-            color: #800000;
-            font-family: 'Bitstream Vera Serif', serif;
+            background-color: var(--background-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            overflow-x: hidden;
+            padding: 0;
         }
-        .title {
-            color: #800000;
-            font-weight: bold;
-        }
-        .poem {
-            color: #ffdddd;
-            font-style: italic;
-        }
-        .heart-icon {
-            width: 36px;
-            height: 25px;
-        }
-        .candle-container {
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: clamp(3rem, 8vw, 5rem) 0;
+            margin-bottom: var(--section-spacing);
             position: relative;
+            overflow: hidden;
             text-align: center;
-            margin-top: 20px;
         }
-        .candle {
-            width: 100px;
-            height: 150px;
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1rem;
         }
-        .flame {
-            width: 20px;
-            height: 40px;
+
+        .hero-subtitle {
+            color: white;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            opacity: 0.9;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: white;
+            border-radius: 20px;
+            padding: var(--section-spacing);
+            margin: 0 auto var(--section-spacing);
+            max-width: 90%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: clamp(1rem, 3vw, 2rem);
+            padding: var(--container-padding);
+        }
+
+        .gallery-item {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            transform: rotate(var(--rotation, -5deg));
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: white;
+            padding: 10px;
+        }
+
+        .gallery-item:nth-child(2) { --rotation: 3deg; }
+        .gallery-item:nth-child(3) { --rotation: -2deg; }
+
+        .gallery-item:hover {
+            transform: rotate(0) scale(1.05);
+            z-index: 3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Enhanced Envelope */
+        .envelope-section {
+            padding: var(--section-spacing) 0;
+            text-align: center;
+        }
+
+        .envelope-container {
+            width: min(300px, 90%);
+            height: 200px;
+            margin: 0 auto;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .envelope {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .envelope.open {
+            transform: rotateX(180deg);
+        }
+
+        .envelope-front, .envelope-back {
             position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: radial-gradient(circle, #ffeb3b, #ff9800);
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+
+        .envelope-front {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .envelope-back {
+            background: #dc3545;
+            transform: rotateX(180deg);
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #dc3545;
+            clip-path: polygon(0 0, 50% 50%, 100% 0);
+            z-index: 2;
+        }
+
+        /* Cake Section */
+        .cake-section {
+            text-align: center;
+            padding: var(--section-spacing);
+            background: white;
+            border-radius: 20px;
+            margin: 0 auto var(--section-spacing);
+            max-width: 90%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cake {
+            width: 200px;
+            height: 200px;
+            background: var(--secondary-color);
             border-radius: 50%;
+            position: relative;
+            margin: 50px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cake-layer {
+            position: absolute;
+            width: 180px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 10px;
+            left: 10px;
+            bottom: 0;
+        }
+
+        .cake-layer:nth-child(2) {
+            bottom: 30px;
+            width: 160px;
+            left: 20px;
+        }
+
+        .cake-layer:nth-child(3) {
+            bottom: 60px;
+            width: 140px;
+            left: 30px;
+        }
+
+        .candle {
+            width: 10px;
+            height: 30px;
+            background: white;
+            position: absolute;
+            bottom: 90px;
+            left: 95px;
+            border-radius: 5px;
+        }
+
+        .flame {
+            width: 15px;
+            height: 30px;
+            background: #ffd700;
+            position: absolute;
+            bottom: 120px;
+            left: 92.5px;
+            border-radius: 50% 50% 20% 20%;
+            transform-origin: center bottom;
             animation: flicker 1s infinite alternate;
+            box-shadow: 0 0 20px #ffd700;
         }
+
         @keyframes flicker {
-            0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            100% { opacity: 0.8; transform: translateX(-50%) translateY(5px); }
+            0%, 100% { transform: rotate(-2deg) scale(1.1); }
+            25% { transform: rotate(3deg) scale(0.9); }
+            50% { transform: rotate(-1deg) scale(1); }
+            75% { transform: rotate(2deg) scale(1.2); }
         }
-        .make-a-wish {
-            color: #800000;
+
+        /* Floating Emojis */
+        .floating-emoji {
+            position: absolute;
+            font-size: 2rem;
+            pointer-events: none;
+            opacity: 0;
+            animation: floatUp 4s ease-in-out infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Wish Section */
+        .wish-section {
+            background: linear-gradient(135deg, #fff5f8, #fff);
+            border-radius: 20px;
+            padding: var(--section-spacing);
+            margin: 0 auto var(--section-spacing);
+            max-width: 90%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .wish-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .wish-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--secondary-color);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+
+        .wish-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .wish-button:hover {
+            transform: scale(1.05);
+            background: var(--secondary-color);
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            background: #fff9f9;
+            border: none;
+            border-radius: 15px;
+            margin: var(--container-padding);
+        }
+
+        .poem-content {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            line-height: 1.8;
+            color: var(--text-color);
+            padding: var(--container-padding);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                gap: 1rem;
+            }
+
+            .gallery-item {
+                transform: none !important;
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                aspect-ratio: 3/4;
+            }
+
+            .gallery-item:hover {
+                transform: scale(1.02) !important;
+            }
+
+            .envelope-container {
+                width: 90%;
+                height: 180px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container text-center mt-5">
-        <h1 class="title">IloveHJW.com</h1>
-        <div class="mt-3">
-            <img src="Images/heart_1.JPG" alt="Heart 1" class="heart-icon">
-            <span class="fs-2 fw-bold">Holly</span>
-            <img src="Images/heart_2.JPG" alt="Heart 2" class="heart-icon">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title animate__animated animate__bounceIn">
+                Happy 21st Birthday, My Love! 🎉
+            </h1>
+            <p class="hero-subtitle">Today is all about you! ✨</p>
         </div>
-        <p class="poem mt-4">
-            Anchored in the sand,<br>
-            that's how I felt,<br>
-            till I met you.<br>
-            You pulled me up,<br>
-            set me free.<br>
-            Only you can do it, let me be me.<br>
-            Beautiful and caring, that's what you are.<br>
-            I know you don't believe me but,<br>
-            you're truly me.<br>
-            I was nothing special till you came.<br>
-            Now I feel wonderful,<br>
-            like a child eating ice cream for the very first time.<br>
-            You let me be free.<br>
-            Be me.<br>
-            Just don't leave me,<br>
-            Just don't let me sink again...
-        </p>
-    </div>
+    </section>
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6 text-center">
-                <h2 class="text-danger">How it came to be...</h2>
-                <p>
-                    I met Holly on <a href="http://www.myspace.com/hollyjean05" class="text-danger">MySpace</a>.
-                    She was involved with someone at the time we started talking,
-                    but I still felt a connection. She has, and she still does,
-                    make me feel like I have never felt for anyone before.
-                </p>
-            </div>
-            <div class="col-md-6 text-center">
-                <h2 class="text-danger">Why I love Holly...</h2>
-                <p>
-                    Holly to me, is caring, kind, sweet, loving, humorous. She understands me for me.
-                    I mean, granted some other people have and still do that, but they don't have
-                    the qualities Holly has.
-                </p>
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Beautiful Moments</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/500" alt="Us together 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/500" alt="Us together 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/500" alt="Us together 3">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Candle Cake Section -->
-    <div class="candle-container mt-5">
-        <img src="Images/candle-cake.png" alt="Candle Cake" class="candle">
-        <div id="flame" class="flame"></div>
-        <div class="mt-3">
-            <label for="wish" class="make-a-wish">Make a wish:</label>
-            <input type="text" id="wish" class="form-control d-inline-block w-50">
-            <button class="btn btn-danger mt-2" onclick="makeWish()">Submit</button>
+    <!-- Envelope Section -->
+    <section class="envelope-section">
+        <div class="container">
+            <div class="envelope-container" onclick="toggleEnvelope()">
+                <div class="envelope" id="envelope">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <h3>💌 Tap to open your special message</h3>
+                    </div>
+                    <div class="envelope-back"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake Section -->
+    <section class="cake-section">
+        <div class="container">
+            <h2 class="mb-4">Make a Wish!</h2>
+            <div class="cake">
+                <div class="cake-layer"></div>
+                <div class="cake-layer"></div>
+                <div class="cake-layer"></div>
+                <div class="candle"></div>
+                <div class="flame" id="flame"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wish Section -->
+    <section class="wish-section">
+        <div class="wish-container">
+            <input type="text" class="wish-input" id="wishInput" placeholder="Type your birthday wish here...">
+            <button class="wish-button" onclick="makeWish()">Blow Out the Candle 🕯️</button>
+        </div>
+    </section>
+
+    <!-- Modal for Poem -->
+    <div class="modal fade" id="poemModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeEnvelope()"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="poem-content">
+                        Twenty-one candles shine so bright,<br>
+                        Marking this special, magical night.<br>
+                        Your smile lights up my whole world true,<br>
+                        Every moment's precious when I'm with you.<br><br>
+                        
+                        Like stars that dance in evening's embrace,<br>
+                        Your love fills every time and space.<br>
+                        On this day that's yours alone,<br>
+                        My heart to yours, forever known.<br><br>
+                        
+                        Happy Birthday, my dearest love!<br>
+                        You're a gift from the stars above.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
-        function makeWish() {
-            const flame = document.getElementById('flame');
-            const wishInput = document.getElementById('wish');
-            if (wishInput.value.trim()) {
-                flame.style.display = 'none';
-                alert('Your wish has been made! The candle is now out.');
-            } else {
-                alert('Please enter a wish before submitting.');
-            }
-        }
-    </script>
-</body>
-</html>
+        // Create floating emojis
+        const emojis = ['🥵', '💐', '😘', '👅'];
+        
+        function createFloatingEmoji() {
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + 'vw';
+            document.querySelector('.hero-section').appendChild(emoji);
+            
+            setTimeout(() => {
+                emoji.remove();
+            }, 4000);
