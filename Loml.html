@@ -149,7 +149,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #dc3545;
+            background: #ff69b4 ;
             clip-path: polygon(0 0, 50% 50%, 100% 0);
             z-index: 2;
         }
@@ -249,6 +249,33 @@
             }
             100% {
                 transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Floating Messages */
+        .floating-message {
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            pointer-events: none;
+            opacity: 0;
+            animation: floatMessage 3s ease-in-out;
+        }
+
+        @keyframes floatMessage {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
                 opacity: 0;
             }
         }
@@ -372,15 +399,16 @@
                 <div class="envelope" id="envelope">
                     <div class="envelope-front">
                         <div class="envelope-flap"></div>
-                        <h3>💌 Tap to open your special message</h3>
                     </div>
                     <div class="envelope-back"></div>
                 </div>
             </div>
+            <br>
+            <h3>💌 Tap to open your special message</h3>
         </div>
     </section>
 
-    <!-- Cake Section -->
+    <!-- Cake and Wish Section -->
     <section class="cake-section">
         <div class="container">
             <h2 class="mb-4">Make a Wish!</h2>
@@ -391,14 +419,9 @@
                 <div class="candle"></div>
                 <div class="flame" id="flame"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Wish Section -->
-    <section class="wish-section">
-        <div class="wish-container">
-            <input type="text" class="wish-input" id="wishInput" placeholder="Type your birthday wish here...">
-            <button class="wish-button" onclick="makeWish()">Blow Out the Candle 🕯️</button>
+            <div class="wish-container">
+                <button class="wish-button" onclick="makeWish()">Blow Out the Candle 🕯️</button>
+            </div>
         </div>
     </section>
 
@@ -432,7 +455,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
         // Create floating emojis
-        const emojis = ['🥵', '💐', '😘', '👅'];
+        const emojis = ['🥵', 'I love you mama', '💐', ,'Maya','😘', '👅', 'Mutu Ko Tukra'];
         
         function createFloatingEmoji() {
             const emoji = document.createElement('div');
@@ -444,3 +467,30 @@
             setTimeout(() => {
                 emoji.remove();
             }, 4000);
+        }
+
+        setInterval(createFloatingEmoji, 2000);
+
+        // Toggle envelope
+        function toggleEnvelope() {
+            const envelope = document.getElementById('envelope');
+            envelope.classList.toggle('open');
+            if (envelope.classList.contains('open')) {
+                const poemModal = new bootstrap.Modal(document.getElementById('poemModal'));
+                poemModal.show();
+            }
+        }
+
+        function closeEnvelope() {
+            const envelope = document.getElementById('envelope');
+            envelope.classList.remove('open');
+        }
+
+        // Make a wish
+        function makeWish() {
+            const flame = document.getElementById('flame');
+            flame.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
