@@ -180,9 +180,20 @@
           text-decoration-line: underline;
           text-decoration-style: wavy;
           text-decoration-color: var(--accent)">Get in Touch</h3>
-        <button  class="btn btn-dark mt-3" data-bs-toggle="modal" data-bs-target="#contactModal">
-          <span class="flashing-text">Say Hello!!!</span>
+        <button class="btn btn-dark mt-3" data-bs-toggle="modal" data-bs-target="#contactModal" style="background-color: #eec35e; color: #fff; font-size: 1.2rem; padding: 10px 20px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.2s, box-shadow 0.2s;">
+          <i class="fa-regular fa-comment fa-beat-fade fa-lg" style="margin-right: 0.5rem;"></i>
+          <span style="font-weight: bold;">Send a Message!</span>
         </button>
+        <script>
+          document.querySelector('button[data-bs-target="#contactModal"]').addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
+          });
+          document.querySelector('button[data-bs-target="#contactModal"]').addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+          });
+        </script>
       </div>
       <div class="col-md-4 mb-3 mb-md-0">
         <h4 style="text-decoration-line: underline;
